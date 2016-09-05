@@ -1,0 +1,16 @@
+﻿Public Class frmInfoAnimal
+
+    Private Sub btnCanelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCanelar.Click
+        frameAnimal.Enabled = False
+        Me.Close()
+    End Sub
+
+    Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
+        txtBuscID.Enabled = False
+        frameAnimal.Enabled = True
+    End Sub
+
+    Private Sub txtBuscID_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBuscID.TextChanged
+
+    End Sub
+End Class
