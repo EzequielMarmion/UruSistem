@@ -1,0 +1,27 @@
+modificar toro
+eliminar toro
+" & DateTimePicker.Text & " (vaca, toro)
+
+'" & DateTimePicker.Value.ToString("dd/MM/yyyy") & "'
+
+
+
+
+
+
+btnModificar animal: 
+ sql = "update toro set id_animal=" & txtIdAnimal.Text & ", id_pais='" & txtIdPais.Text & "', nombre='" & txtNombre.Text & "', raza='" & txtRaza.Text & "', fecha_nacimiento='" & DateTimePicker.Text & "',  where id_animal=" & txtBuscId.Text
+        Try
+            cn.Execute(sql)
+            MsgBox("Modificación exitosa.", MsgBoxStyle.Information, "Atención")
+        Catch ex As Exception
+            MsgBox(sql + "No se pudo Modificar el Animal.", MsgBoxStyle.Information, "Error")
+            Exit Sub
+        End Try
+        txtIdAnimal.Text = ""
+        txtIdPais.Text = ""
+        txtNombre.Text = ""
+        txtRaza.Text = ""
+        DateTimePicker.Text = ""
+        btnModificar.Enabled = False
+        btnCrear.Enabled = True
